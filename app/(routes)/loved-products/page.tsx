@@ -1,0 +1,36 @@
+"use client"
+
+import { useLovedProducts } from "@/hooks/use-loved-products"
+import LovedItemProduct from "./components/loved-item-product"
+import { useEffect, useState } from "react"
+
+export default function Page() {
+  const { lovedItems } = useLovedProducts()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
+  return (
+    <div className="max-w-4xl py-4 mx-auto sm:py-32 sm:px-24">
+      <h1 className="sm:text-2xl">Productos que te gustan</h1>
+
+      <div>
+        <div>
+          {lovedItems.length === 0 && (
+            <p>No hay productos en la sección de Me gusta</p>
+          )}
+          <ul>
+            {lovedItems.map((item) => (
+              <LovedItemProduct key={item.id} product={item} />
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  )
+}

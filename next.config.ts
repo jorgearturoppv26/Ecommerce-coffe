@@ -1,7 +1,14 @@
-import type { NextConfig } from "next";
+const nextConfig = {
+    images: {
+        unoptimized: true,
+        remotePatterns: [
+            {
+                protocol: "http",
+                hostname: "localhost",
+                port: "1337",
+            }
+        ]
+    }
+}
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+export default nextConfig
