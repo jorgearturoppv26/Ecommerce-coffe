@@ -66,7 +66,7 @@ const MenuList = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
             <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                <Link href="/accesorios">Accesorios</Link>
+                <Link  href="/accesories">Accesorios</Link>
             </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
