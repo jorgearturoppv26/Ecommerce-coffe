@@ -20,7 +20,7 @@ const ChoseCategory = () => {
                         className="relative max-w-xs mx-auto overflow-hidden bg-no-repeat bg-cover rounded-lg"
                     >
                         <NextImage
-                            src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${category.nameImage.url}`}
+                            src={category.nameImage.url.startsWith("http") ? category.nameImage.url : `${process.env.NEXT_PUBLIC_BACKEND_URL}${category.nameImage.url}`}
                             alt={category.categoryName}
                             width={270}
                             height={270}

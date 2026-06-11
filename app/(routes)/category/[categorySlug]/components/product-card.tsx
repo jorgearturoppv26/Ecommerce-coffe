@@ -36,7 +36,7 @@ const ProductCard = (props: ProductCardProps) => {
                     {product.images.map((image) => (
                         <CarouselItem key={image.id} className="group relative">
                             <NextImage
-                                src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${image.url}`}
+                                src={image.url.startsWith("http") ? image.url : `${process.env.NEXT_PUBLIC_BACKEND_URL}${image.url}`}
                                 alt="Image"
                                 width={300}
                                 height={300}
