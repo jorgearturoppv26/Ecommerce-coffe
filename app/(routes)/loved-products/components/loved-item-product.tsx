@@ -29,7 +29,7 @@ const LovedItemProduct = (props: LovedItemProductProps) => {
         className="cursor-pointer"
       >
         <img
-          src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${product.images[0].url}`}
+          src={product.images[0].url.startsWith("http") ? product.images[0].url : `${process.env.NEXT_PUBLIC_BACKEND_URL}${product.images[0].url}`}
           alt="Product"
           className="w-24 h-24 overflow-hidden rounded-md sm:w-auto sm:h-32 object-contain"
         />

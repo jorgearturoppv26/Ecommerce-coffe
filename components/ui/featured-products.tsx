@@ -33,7 +33,7 @@ const FeaturedProducts = () => {
                                         <Card className="py-4 border border-gray-200 shadow-none">
                                             <CardContent className="relative flex items-center justify-center px-6 py-0 overflow-hidden ">
                                                 <NextImage 
-                                                   src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${images[0].url}`}
+                                                   src={images[0].url.startsWith("http") ? images[0].url : `${process.env.NEXT_PUBLIC_BACKEND_URL}${images[0].url}`}
                                                    alt="image featured"
                                                    width={400}
                                                    height={200}

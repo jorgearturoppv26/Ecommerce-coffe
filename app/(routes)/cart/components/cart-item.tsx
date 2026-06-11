@@ -24,7 +24,7 @@ const CartItem = (props: CartItemProps) => {
                 className="cursor-pointer"
             >
                 <NextImage
-                    src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${product.images[0].url}`}
+                    src={product.images[0].url.startsWith("http") ? product.images[0].url : `${process.env.NEXT_PUBLIC_BACKEND_URL}${product.images[0].url}`}
                     alt="Product"
                     width={96}
                     height={-96}
